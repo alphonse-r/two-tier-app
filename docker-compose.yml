@@ -2,7 +2,7 @@
 services:
   mysql:
     image: mariadb:lts-ubi9
-    container_name: mysql
+    container_name: mariadb
     environment:
       MYSQL_DATABASE: "devops"
       MYSQL_USER: "flaskuser"

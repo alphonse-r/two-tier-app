@@ -24,7 +24,7 @@ def home():
     return "Bonjour"
 
 @app.route("/mysql")
-def home():
+def mysql_test():
     conn = get_db_connection()
     cur = conn.cursor()
     cur.execute("SELECT 1")

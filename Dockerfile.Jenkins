@@ -1,0 +1,14 @@
+# Jenkins LTS officiel
+FROM jenkins/jenkins:lts-slim-jdk21
+
+# Passe en root pour installer des packages
+USER root
+
+# Installer Git et Docker CLI (Docker Compose v2 est inclus dans Docker CLI)
+RUN apt-get update && \
+    apt-get install -y git docker.io && \
+    rm -rf /var/lib/apt/lists/*
+
+# Retour à l’utilisateur jenkins
+USER jenkins
+

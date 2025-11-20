@@ -31,7 +31,7 @@ def mysql_test():
     result = cur.fetchone()
     cur.close()
     conn.close()
-    return f "MySQL test result: {result[0]}"
+    return f"MySQL test result: {result[0]}"
 
 @app.route("/health")
 def health():

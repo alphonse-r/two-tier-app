@@ -111,6 +111,8 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 - Accéder à l'interface web de Jenkins sur __`http://<ec2-public-ip>:8080`__
 - Coller le mot de passe, installer les plugins et créer un utilisateur admin. 
 
+![interfaceJenkins](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
 # Etape 4: Configuration du dépôt GitHub
 Voici les fichiers que vous avez besoin dans votre dépot GitHub
 
@@ -308,6 +310,7 @@ Configure webhook comme suit :
 
 ### Configurer le pipeline :
 - Dans la configuration du projet, faites défiler jusqu’à la section ***`Pipeline`***.
+- Cocher ***`GitHub hook trigger for GITScm polling`***
 - Définissez ***`Definition`*** sur ***`Pipeline script from SCM`***.
 - Choisissez ***`Git`*** comme système de gestion de code source.
 - Saisissez l’URL de votre dépôt GitHub.

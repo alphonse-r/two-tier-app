@@ -19,6 +19,7 @@ def get_db_connection():
     )
     return conn
 
+#home page
 @app.route("/")
 def home():
     return "Bonjour"

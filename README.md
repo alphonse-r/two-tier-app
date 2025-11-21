@@ -23,7 +23,7 @@ Le projet inclut également un pipeline CI/CD avec Jenkins qui est déclenché a
 - Choisir t2.medium comme type d'instance. Vous pouvez utiliser t3.micro si vous êtes sur l'offre gratuit. 
 - Créer une paire de clés pour l'accès SSH.
 
-![ec2-image](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![ec2-image](images/ec2-images)
 
 ### Configurer le groupe de sécurité :
 Créer un groupe de sécurité avec le "inbound rules" suivant :

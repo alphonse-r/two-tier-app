@@ -341,7 +341,11 @@ Configure webhook comme suit :
 ## Pile Technologique
 
 **Cloud:** AWS
+
 **Conteneur:** Docker
+
 **Orchestration:** Docker-compose
+
 **CI/CD:** Jenkins
+
 **Serveur:** Flask

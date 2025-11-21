@@ -32,12 +32,12 @@ Créer un groupe de sécurité avec le "inbound rules" suivant :
 - Type: Custom TCP, Protocol: TCP, Port: 5000 (Flask), Source: 0.0.0.0/0
 - Type: Custom TCP, Protocol: TCP, Port: 8080 (Jenkins), Source: 0.0.0.0/0
 
-![sg-image](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![sg-image](images/sg-image.png)
 
 ### Connecter à l'instance EC2 :
 Utiliser CloudShell et suivre les étapes sur l'image ci-dessous pour s'y connecter. N'oubliez pas d'ajouter dans cloudshell votre pair de clés.
 
-![ssh-image](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![ssh-image](images/ssh-image.png)
 
 # Etape 2: Installation des dépendances dans EC2
 
@@ -111,7 +111,7 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 - Accéder à l'interface web de Jenkins sur __`http://<ec2-public-ip>:8080`__
 - Coller le mot de passe, installer les plugins et créer un utilisateur admin. 
 
-![interfaceJenkins](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![interfaceJenkins](images/interfaceJenkins.png)
 
 # Etape 4: Configuration du dépôt GitHub
 Voici les fichiers que vous avez besoin dans votre dépot GitHub
@@ -300,7 +300,7 @@ Configure webhook comme suit :
 - ***`Content type*`*** -> ***`application/json`***
 - Ensuite cliquer sur ***`Update webhook`***
 
-![webhook](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![webhook](images/webhook.png)
 
 # Etape 5: Création et Execution de pipeline Jenkins
 
@@ -318,14 +318,14 @@ Configure webhook comme suit :
 - Changer ****`/master`*** en ****`/main`***
 - Enregistrez la configuration.
 
-![pipeline-image](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![pipeline-image](images/pipeline-image.png)
 
 ### Executer le pipeline:
 
 - Cliquez sur Build Now pour déclencher manuellement le pipeline pour la première fois.
 - Surveillez l’exécution via Stage View ou Console Output.
 
-![output-image](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![output-image](images/output-image.png)
 
 ### Vérifier le déploiement :
 

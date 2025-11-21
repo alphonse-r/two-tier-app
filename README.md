@@ -26,7 +26,7 @@ Le projet inclut également un pipeline CI/CD avec Jenkins qui est déclenché a
 ![ec2-image](images/ec2-image.png)
 
 ### Configurer le groupe de sécurité :
-Créer un groupe de sécurité avec le "inbound rules" suivant :
+Créer un groupe de sécurité avec les règles entrantes (inbound rules) suivant :
 - Type: SSH, Protocol: TCP, Port: 22, Source: Votre IP
 - Type: HTTP, Protocol: TCP, Port: 80, Source: 0.0.0.0/0
 - Type: Custom TCP, Protocol: TCP, Port: 5000 (Flask), Source: 0.0.0.0/0
@@ -54,6 +54,10 @@ sudo sh get-docker.sh
 ### Ajouter l'utilisateur dans groupe Docker pour executer les commandes docker sans sudo :
 ```bash
 sudo usermod -aG docker $USER
+```
+### Recharger votre appartenance au groupe docker sans avoir besoin de se déconnecter/reconnecter :
+
+```bash
 newgrp docker
 ```
 ### Vérifier que vous pouvez éxecuter les commandes docker sans sudo :
@@ -325,6 +329,8 @@ Configure webhook comme suit :
 - Cliquez sur Build Now pour déclencher manuellement le pipeline pour la première fois.
 - Surveillez l’exécution via Stage View ou Console Output.
 
+### Désormais, le pipeline se déclenchera automatiquement à chaque fois que vous pousserez du code sur GitHub.
+
 ![output-image](images/output-image.png)
 
 ### Vérifier le déploiement :
@@ -332,3 +338,10 @@ Configure webhook comme suit :
 - Après un build réussi, votre application Flask sera accessible à l’adresse : **`http://<votre-ip-publique-EC2>:5000`**.
 - Vérifiez que les conteneurs sont bien en cours d’exécution sur l’instance EC2 avec la commande **docker ps**.
 
+## Pile Technologique
+
+**Cloud:** AWS
+**Conteneur:** Docker
+**Orchestration:** Docker-compose
+**CI/CD:** Jenkins
+**Serveur:** Flask
